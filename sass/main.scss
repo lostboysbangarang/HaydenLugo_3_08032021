@@ -14,13 +14,13 @@ $bckgrnd_Grey: #EAEAEA;
         &:nth-child(#{$i}) span {
             @if $i == 1 {
                 background: linear-gradient(rgba(153, 226, 208, .45));
-                background-image: url("https://lostboysbangarang.github.io/HaydenLugo_3_08032021/Resources/images/restaurants/#{$i}.jpg");
+                background-image: url("Resources/images/restaurants/#{$i}.jpg");
                 //background-color: $tertiary;
                 //background-blend-mode: color;
                 z-index: -1;
             }@else {
                 background: linear-gradient(rgba(153, 226, 208, .45));
-                background-image: url("https://lostboysbangarang.github.io/HaydenLugo_3_08032021/Resources/images/restaurants/#{$i}.jpg");
+                background-image: url("Resources/images/restaurants/#{$i}.jpg");
                 //background-color: $tertiary;
                 //background-blend-mode: color;
                 z-index: -1;
