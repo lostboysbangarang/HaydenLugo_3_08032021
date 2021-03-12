@@ -1,0 +1,221 @@
+html, body {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  height: 10vh;
+}
+.head_back {
+  visibility: hidden;
+}
+
+.location {
+  height: 6vh;
+  background-color: #985ede;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.location_layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #EAEAEA;
+  padding: 10px;
+  border-radius: 20px;
+  border-color: #d1d1d1;
+  border-style: solid;
+  width: fit-content;
+}
+.location_layout_icon {
+  margin-right: 10px;
+}
+
+@-webkit-keyframes imageAnimation {
+  0% {
+    opacity: 0;
+    -webkit-animation-timing-function: ease-in;
+  }
+  12.5% {
+    opacity: 1;
+    -webkit-animation-timing-function: ease-out;
+  }
+  25% {
+    opacity: 1;
+  }
+  37.5% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes imageAnimation {
+  0% {
+    opacity: 0;
+    -webkit-animation-timing-function: ease-in;
+  }
+  12.5% {
+    opacity: 1;
+    -webkit-animation-timing-function: ease-out;
+  }
+  25% {
+    opacity: 1;
+  }
+  37.5% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-o-keyframes imageAnimation {
+  0% {
+    opacity: 0;
+    -webkit-animation-timing-function: ease-in;
+  }
+  12.5% {
+    opacity: 1;
+    -webkit-animation-timing-function: ease-out;
+  }
+  25% {
+    opacity: 1;
+  }
+  37.5% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-ms-keyframes imageAnimation {
+  0% {
+    opacity: 0;
+    -webkit-animation-timing-function: ease-in;
+  }
+  12.5% {
+    opacity: 1;
+    -webkit-animation-timing-function: ease-out;
+  }
+  25% {
+    opacity: 1;
+  }
+  37.5% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes imageAnimation {
+  0% {
+    opacity: 0;
+    -webkit-animation-timing-function: ease-in;
+  }
+  12.5% {
+    opacity: 1;
+    -webkit-animation-timing-function: ease-out;
+  }
+  25% {
+    opacity: 1;
+  }
+  37.5% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.bodyDiv {
+  height: 69vh;
+}
+.bodyDiv_slideShow li {
+  list-style-type: none;
+  animation-name: imageAnimation;
+}
+.bodyDiv_slideShow li:nth-child(1) span {
+  background: linear-gradient(rgba(153, 226, 208, 0.45));
+  background-image: url(/Resources/images/restaurants/1.jpg);
+  z-index: -1;
+}
+.bodyDiv_slideShow li:nth-child(2) span {
+  background: linear-gradient(rgba(153, 226, 208, 0.45));
+  background-image: url(/Resources/images/restaurants/2.jpg);
+  z-index: -1;
+  -webkit-animation-delay: 6s;
+  -moz-animation-delay: 6s;
+  -o-animation-delay: 6s;
+  -ms-animation-delay: 6s;
+  animation-delay: 6s;
+}
+.bodyDiv_slideShow li:nth-child(3) span {
+  background: linear-gradient(rgba(153, 226, 208, 0.45));
+  background-image: url(/Resources/images/restaurants/3.jpg);
+  z-index: -1;
+  -webkit-animation-delay: 12s;
+  -moz-animation-delay: 12s;
+  -o-animation-delay: 12s;
+  -ms-animation-delay: 12s;
+  animation-delay: 12s;
+}
+.bodyDiv_slideShow li:nth-child(4) span {
+  background: linear-gradient(rgba(153, 226, 208, 0.45));
+  background-image: url(/Resources/images/restaurants/4.jpg);
+  z-index: -1;
+  -webkit-animation-delay: 18s;
+  -moz-animation-delay: 18s;
+  -o-animation-delay: 18s;
+  -ms-animation-delay: 18s;
+  animation-delay: 18s;
+}
+.bodyDiv_slideShow li span {
+  width: 100%;
+  height: 74vh;
+  z-index: -1;
+  position: absolute;
+  top: 16vh;
+  left: 0px;
+  color: transparent;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: none;
+  opacity: 0;
+  z-index: 0;
+  -webkit-backface-visibility: hidden;
+  -webkit-animation: imageAnimation 24s linear infinite 0s;
+  -moz-animation: imageAnimation 24s linear infinite 0s;
+  -o-animation: imageAnimation 24s linear infinite 0s;
+  -ms-animation: imageAnimation 24s linear infinite 0s;
+  animation: imageAnimation 24s linear infinite 0s;
+}
+.bodyDiv_text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 5vh;
+  font-size: 2em;
+}
+.bodyDiv_text_info {
+  margin-top: 2.5vh;
+}
+.bodyDiv_text_explore {
+  background-color: #9356DC;
+  padding: 2vh;
+  border-radius: 4vh;
+  margin-top: 7.5vh;
+}
+
+.foot {
+  background-color: black;
+  height: 15vh;
+  bottom: 0px;
+}
+
+/*# sourceMappingURL=style.css.map */
