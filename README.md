@@ -1,3 +1,5 @@
-# HaydenLugo_3_08032021
+# OhMyFoodsMkIII
  Project III for OC
-Usins .sass and animations
+Using .sass and animations
+https://lostboysbangarang.github.io/OhMyFoodsMkIII/
+My repo pushes contain much more information
