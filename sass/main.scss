@@ -15,14 +15,10 @@ $bckgrnd_Grey: #EAEAEA;
             @if $i == 1 {
                 background: linear-gradient(rgba(153, 226, 208, .45));
                 background-image: url(../Resources/images/restaurants/#{$i}.jpg);
-                //background-color: $tertiary;
-                //background-blend-mode: color;
                 z-index: -1;
             }@else {
                 background: linear-gradient(rgba(153, 226, 208, .45));
                 background-image: url(../Resources/images/restaurants/#{$i}.jpg);
-                //background-color: $tertiary;
-                //background-blend-mode: color;
                 z-index: -1;
                 -webkit-animation-delay: #{($i - 1) *6}s;
                 -moz-animation-delay: #{($i - 1) *6}s;
