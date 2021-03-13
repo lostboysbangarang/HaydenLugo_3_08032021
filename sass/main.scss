@@ -29,6 +29,34 @@ $bckgrnd_Grey: #EAEAEA;
         }
     }
 }
+@mixin theWorks {
+    @for $i from 1 through 3 {
+        &_#{$i} {
+            @include centering;
+            justify-content: flex-start;
+            display: flex;
+            background-color: $bckgrnd_Grey;
+            width: 40vw;
+            height: 5vh;
+            margin-bottom: 2.5vh;
+            border-radius: 5vh;
+            @for $j from 1 through 2 {
+                &_#{$j}{
+                    margin-right: 3vw;
+                    @include centering;
+                    @if $j == 1 {
+                        background-color: $primary;
+                        height: inherit;
+                        width: 5vh;
+                        border-radius: 5vh;
+                    }
+                }
+            }           
+        }
+        
+
+    }
+}
 @mixin keys{
     0% {opacity: 0; -webkit-animation-timing-function: ease-in;}
     12.5% {opacity: 1; -webkit-animation-timing-function: ease-out;}
@@ -129,6 +157,15 @@ html,body {
             padding: 2vh;
             border-radius: 4vh;
             margin-top: 7.5vh;
+        }
+    }
+    &_HowItWorks {
+        @include centering;
+        flex-direction: column;
+        margin-top: 5vh;
+        font-size: 1.5em;
+        &_list {
+            @include theWorks;
         }
     }
 }

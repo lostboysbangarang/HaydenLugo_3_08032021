@@ -211,6 +211,98 @@ html, body {
   border-radius: 4vh;
   margin-top: 7.5vh;
 }
+.bodyDiv_HowItWorks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 5vh;
+  font-size: 1.5em;
+}
+.bodyDiv_HowItWorks_list_1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  display: flex;
+  background-color: #EAEAEA;
+  width: 40vw;
+  height: 5vh;
+  margin-bottom: 2.5vh;
+  border-radius: 5vh;
+}
+.bodyDiv_HowItWorks_list_1_1 {
+  margin-right: 3vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #9356DC;
+  height: inherit;
+  width: 5vh;
+  border-radius: 5vh;
+}
+.bodyDiv_HowItWorks_list_1_2 {
+  margin-right: 3vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bodyDiv_HowItWorks_list_2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  display: flex;
+  background-color: #EAEAEA;
+  width: 40vw;
+  height: 5vh;
+  margin-bottom: 2.5vh;
+  border-radius: 5vh;
+}
+.bodyDiv_HowItWorks_list_2_1 {
+  margin-right: 3vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #9356DC;
+  height: inherit;
+  width: 5vh;
+  border-radius: 5vh;
+}
+.bodyDiv_HowItWorks_list_2_2 {
+  margin-right: 3vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bodyDiv_HowItWorks_list_3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  display: flex;
+  background-color: #EAEAEA;
+  width: 40vw;
+  height: 5vh;
+  margin-bottom: 2.5vh;
+  border-radius: 5vh;
+}
+.bodyDiv_HowItWorks_list_3_1 {
+  margin-right: 3vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #9356DC;
+  height: inherit;
+  width: 5vh;
+  border-radius: 5vh;
+}
+.bodyDiv_HowItWorks_list_3_2 {
+  margin-right: 3vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .foot {
   background-color: black;
