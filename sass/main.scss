@@ -27,12 +27,20 @@ $bckgrnd_Grey: #EAEAEA;
                 animation-delay: #{($i - 1) *6}s;
             }
         }
+        &:nth-child(#{$i}) div {
+            -webkit-animation-delay: #{($i - 1) *6}s;
+            -moz-animation-delay: #{($i - 1) *6}s;
+            -o-animation-delay: #{($i - 1) *6}s;
+            -ms-animation-delay: #{($i - 1) *6}s;
+            animation-delay: #{($i - 1) *6}s;
+        }
     }
 }
 @mixin theWorks {
     @for $i from 1 through 3 {
         &_#{$i} {
             @include centering;
+            @include shadows(darken($bckgrnd_Grey, 20%), .5vh);
             justify-content: flex-start;
             display: flex;
             background-color: $bckgrnd_Grey;
@@ -44,6 +52,7 @@ $bckgrnd_Grey: #EAEAEA;
                 &_#{$j}{
                     margin-right: 3vw;
                     @include centering;
+                    
                     @if $j == 1 {
                         background-color: $primary;
                         height: inherit;
@@ -64,39 +73,12 @@ $bckgrnd_Grey: #EAEAEA;
     37.5% {opacity: 0}
     100% {opacity: 0}
 }
+@mixin shadows($color: lighter($color), $size: $size) {
+    box-shadow: 0px $size $size lighter($color);
+}
 
 
 
-html,body {
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
-}
-.head {
-    @include centering;
-    justify-content: space-between;
-    height: 10vh;
-    &_back {
-        visibility: hidden;
-    }
-}
-.location {
-    height: 6vh;
-    background-color: lighten($primary, 2%);
-    @include centering;
-    &_layout {
-        @include centering;
-        background-color: $bckgrnd_Grey;
-        padding: 10px;
-        border-radius: 20px;
-        border-color: darken($bckgrnd_Grey, 10%);
-        border-style: solid;
-        width: fit-content;
-        &_icon {
-            margin-right: 10px;
-        }
-    }
-}
 @-webkit-keyframes imageAnimation {
     @include keys;
 }
@@ -114,6 +96,66 @@ html,body {
 }
 
 
+
+
+
+
+@function lighter($color){
+    @if ( lightness($color) < 25% ) {
+      @return lighten($color, 20%);
+  }
+    @else {
+      @return darken($color, 20%);
+  }
+}
+
+
+
+
+
+
+
+
+html,body {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+.head {
+    @include centering;
+    @include shadows($primary, .25vh);
+    background-color: #EAEAEA;
+    justify-content: space-between;
+    height: 10vh;
+    z-index: 2;
+    position: relative;
+    &_back {
+        visibility: hidden;
+    }
+}
+.location {
+    height: 6vh;
+    background-color: lighten($primary, 2%);
+    @include centering;
+    @include shadows($primary, .5vh);
+    z-index: 0;
+    &_layout {
+        @include centering;
+        @include shadows($primary,.25vh);
+        position: relative;
+        background-color: $bckgrnd_Grey;
+        padding: 10px;
+        border-radius: 20px;
+        border-color: darken($bckgrnd_Grey, 10%);
+        border-style: solid;
+        width: fit-content;
+        &_icon {
+            margin-right: 10px;
+        }
+    }
+}
+
 .bodyDiv {
     height: 69vh;
     &_slideShow{
@@ -127,19 +169,33 @@ html,body {
                 z-index: -1;
                 position: absolute;
                 top: 16vh;
-                left: 0px;
+                left: 0vh;
                 color: transparent;
                 background-size: cover;
                 background-position: 50% 50%;
                 background-repeat: none;
                 opacity: 0;
-                z-index: 0;
+                padding-bottom: 0px;
+                margin-bottom: 0px;
+
                 -webkit-backface-visibility: hidden;
                 -webkit-animation: imageAnimation 24s linear infinite 0s;
                 -moz-animation: imageAnimation 24s linear infinite 0s;
                 -o-animation: imageAnimation 24s linear infinite 0s;
                 -ms-animation: imageAnimation 24s linear infinite 0s;
                 animation: imageAnimation 24s linear infinite 0s;
+            }
+            & div {
+                
+                position: absolute;
+                right: 4vh;
+                bottom: 12vh;
+                -webkit-backface-visibility: hidden;
+                -webkit-animation: imageAnimation 24s linear infinite 0s;
+                -moz-animation: imageAnimation 24s linear infinite 0s;
+                -o-animation: imageAnimation 24s linear infinite 0s;
+                -ms-animation: imageAnimation 24s linear infinite 0s;
+                animation: imageAnimation 24s linear infinite 0s; 
             }
         }
 
@@ -154,9 +210,12 @@ html,body {
         }
         &_explore {
             background-color: $primary;
+            background: linear-gradient($secondary,$primary);
             padding: 2vh;
             border-radius: 4vh;
             margin-top: 7.5vh;
+            @include shadows($primary, .5vh);
+            
         }
     }
     &_HowItWorks {
@@ -166,12 +225,40 @@ html,body {
         font-size: 1.5em;
         &_list {
             @include theWorks;
+            
         }
     }
 }
 
 .foot {
     background-color: black;
-    height: 15vh;
-    bottom: 0px;    
+    height: 12vh;
+    bottom: 0px;
+    color: white;
+    padding-top: 1vh;
+    @for $i from 1 through 5 {
+        &_#{$i} {
+            @if $i==1 {
+                font-family: 'Shrikhand', cursive;
+                padding-left: 6vw;
+            }@else if $i==5 or $i==4 {
+                padding-left: 7vw;
+            }@else {
+                padding-left: 5vw;
+                display: flex;
+                @if $i==2 {
+                    & i {
+                        margin-right: 1.4vw;
+                    }
+                }
+                @if $i==3 {
+                    & i {
+                        margin-right: 1vw;
+                    }
+                }
+            }
+        }
+        
+    }
+    
 }
