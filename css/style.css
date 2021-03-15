@@ -448,18 +448,67 @@ html, body {
 }
 .restaurants_div_flex {
   background-color: rgba(153, 226, 208, 0.3);
-  height: 25vh;
+  height: 40vh;
   width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.restaurants_div_fix {
-  position: absolute;
-  z-index: 20;
-  bottom: 25vh;
+.restaurants_div_flex_1 {
+  background-color: #EAEAEA;
+  margin-top: 2.5vh;
+  height: 35vh;
+  width: 80vw;
+  border-radius: 5vh;
 }
-.restaurants_div_fix_flex {
-  height: 25vh;
-  background-color: white;
-  z-index: 2;
+.restaurants_div_flex_1_1 {
+  background-image: url(../Resources/images/restaurants/11.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
+  border-radius: 5vh 5vh 0vh 0vh;
+  height: 27vh;
+}
+.restaurants_div_flex_2 {
+  background-color: #EAEAEA;
+  margin-top: 2.5vh;
+  height: 35vh;
+  width: 80vw;
+  border-radius: 5vh;
+}
+.restaurants_div_flex_2_2 {
+  background-image: url(../Resources/images/restaurants/22.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
+  border-radius: 5vh 5vh 0vh 0vh;
+  height: 27vh;
+}
+.restaurants_div_flex_3 {
+  background-color: #EAEAEA;
+  margin-top: 2.5vh;
+  height: 35vh;
+  width: 80vw;
+  border-radius: 5vh;
+}
+.restaurants_div_flex_3_3 {
+  background-image: url(../Resources/images/restaurants/33.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
+  border-radius: 5vh 5vh 0vh 0vh;
+  height: 27vh;
+}
+.restaurants_div_flex_4 {
+  background-color: #EAEAEA;
+  margin-top: 2.5vh;
+  height: 35vh;
+  width: 80vw;
+  border-radius: 5vh;
+}
+.restaurants_div_flex_4_4 {
+  background-image: url(../Resources/images/restaurants/44.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
+  border-radius: 5vh 5vh 0vh 0vh;
+  height: 27vh;
 }
 
 .foot {

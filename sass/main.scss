@@ -245,31 +245,41 @@ html,body {
         }
     }
 }
-
-.restaurants_div {
-    @include centering;
-    
-    background-color: $bckgrnd_Black;
-    flex-direction: column;
-    z-index: -1;
-    
-
-    &_flex {
-        background-color: $tertiaryTrans;
-        height: 25vh;
-        width: 100vw;
-    }
-    &_fix {
-        position: absolute;
-        z-index: 20;
-        bottom: 25vh;
-        &_flex {
-            height: 25vh;
-            background-color: white;
-            z-index: 2;
+@mixin maps {
+    @for $i from 1 through 4 {
+        &_#{$i} {
+            background-color: $bckgrnd_Grey;
+            margin-top: 2.5vh;
+            height: 35vh;
+            width: 80vw;
+            border-radius: 5vh;
+            &_#{$i}{
+                background-image: url(../Resources/images/restaurants/#{$i}#{$i}.jpg);
+                background-size: cover;
+                background-position: 50% 50%;
+                border-radius: 5vh 5vh 0vh 0vh;
+                height: 27vh;
+            }
         }
     }
 }
+.restaurants_div {
+    @include centering;
+    background-color: $bckgrnd_Black;
+    flex-direction: column;
+    z-index: -1;
+    &_flex {
+        background-color: $tertiaryTrans;
+        height: 40vh;
+        width: 100vw;
+        @include maps;
+        @include centering;
+       
+
+    }
+    
+}
+
 
 
 .foot {
