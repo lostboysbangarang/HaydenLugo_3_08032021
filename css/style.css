@@ -438,6 +438,30 @@ html, body {
   align-items: center;
 }
 
+.restaurants_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(50, 50, 50, 0.3);
+  flex-direction: column;
+  z-index: -1;
+}
+.restaurants_div_flex {
+  background-color: rgba(153, 226, 208, 0.3);
+  height: 25vh;
+  width: 100vw;
+}
+.restaurants_div_fix {
+  position: absolute;
+  z-index: 20;
+  bottom: 25vh;
+}
+.restaurants_div_fix_flex {
+  height: 25vh;
+  background-color: white;
+  z-index: 2;
+}
+
 .foot {
   background-color: black;
   height: 12vh;
