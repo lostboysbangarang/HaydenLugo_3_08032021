@@ -500,6 +500,8 @@ html, body {
   background-color: #9356DC;
   margin-top: -4vh;
   margin-left: 4vh;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 .restaurants_div_flex_names {
   display: flex;
