@@ -300,7 +300,7 @@ html,body {
                                 //transform: scale(0);
                                 font-size: 72px;
                                 // background: -moz-linear-gradient(180deg, $secondary -10%, $primary 110%);
-                                background: -webkit-gradient(linear, left top, left bottom, from($secondary), to(primary));
+                                background: -webkit-linear-gradient(180deg, $secondary -10%, $primary 110%);
                                 // background: linear-gradient(180deg, $secondary -10%, $primary 110%);
                                 // //color: $primary;
                                 // -webkit-background-clip: text;

@@ -513,7 +513,7 @@ html, body {
 }
 .restaurants_div_flex_card_heart .fas.fa-heart.fa-stack-2x.fullHeart, .restaurants_div_flex_card_heart .fas.fa-heart.fa-stack-2x .fullHeart:before {
   font-size: 72px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(primary));
+  background: -webkit-linear-gradient(180deg, #FF79DA -10%, #9356DC 110%);
   -webkit-text-fill-color: transparent;
   display: initial;
 }
