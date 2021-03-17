@@ -288,26 +288,30 @@ html,body {
                 align-items: flex-start;
                 justify-content: flex-start;
                 .fas {
-                    font-size: 2em;
-                    color: $secondary;
-                    display: block;
-                    background: -webkit-linear-gradient(180deg, $secondary -10%, $primary 110%);
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
+                    //font-size: 2em;
+                    //color: $secondary;
+                    //display: block;
+                    //background: -webkit-linear-gradient(180deg, $secondary -10%, $primary 110%);
+                    //-webkit-background-clip: text;
+                    //-webkit-text-fill-color: transparent;
                     &.fa-heart{
                         &.fa-stack-2x {
+                            //color: $secondary;
+                            background: linear-gradient(180deg, $secondary -10%, $primary 110%);
+                            background-image: linear-gradient(180deg, $secondary -10%, $primary 110%);
                             &.fullHeart, .fullHeart:before {
                                 //transform: scale(0);
-                                font-size: 72px;
+                                //font-size: 72px;
+                                //color: $secondary;
                                 // background: -moz-linear-gradient(180deg, $secondary -10%, $primary 110%);
-                                background: -webkit-linear-gradient(180deg, $secondary -10%, $primary 110%);
+                                //background: -webkit-linear-gradient(180deg, $secondary -10%, $primary 110%);
                                 // background: linear-gradient(180deg, $secondary -10%, $primary 110%);
                                 // //color: $primary;
                                 // -webkit-background-clip: text;
                                 // -moz-background-clip: text;
                                 // background-clip: text;
-                                -webkit-text-fill-color: transparent; 
-                                display: initial;
+                                //-webkit-text-fill-color: transparent; 
+                                //display: initial;
                             }
                         }
                     }
