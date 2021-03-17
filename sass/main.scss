@@ -4,6 +4,7 @@ $tertiary: #99E2D0;
 $tertiaryTrans: rgba(153, 226, 208, .3);
 $bckgrnd_Grey: #EAEAEA;
 $bckgrnd_Black: rgba(50,50,50,.3);
+$white: #FFFFFF;
 
 
 @mixin centering {
@@ -279,44 +280,50 @@ html,body {
                 align-items: flex-end;
                 margin-right: 1vw;
             }
-            &_heart {
-                z-index: 2;
-                
-                margin-top: -4vh;
-                margin-left: 4vh;
-                position: absolute;
-                align-items: flex-start;
-                justify-content: flex-start;
-                .fas {
-                    //font-size: 2em;
-                    //color: $secondary;
-                    //display: block;
-                    //background: -webkit-linear-gradient(180deg, $secondary -10%, $primary 110%);
-                    //-webkit-background-clip: text;
-                    //-webkit-text-fill-color: transparent;
-                    &.fa-heart{
-                        &.fa-stack-2x {
-                            //color: $secondary;
-                            background: linear-gradient(180deg, $secondary -10%, $primary 110%);
-                            background-image: linear-gradient(180deg, $secondary -10%, $primary 110%);
-                            &.fullHeart, .fullHeart:before {
-                                //transform: scale(0);
-                                //font-size: 72px;
-                                //color: $secondary;
-                                // background: -moz-linear-gradient(180deg, $secondary -10%, $primary 110%);
-                                //background: -webkit-linear-gradient(180deg, $secondary -10%, $primary 110%);
-                                // background: linear-gradient(180deg, $secondary -10%, $primary 110%);
-                                // //color: $primary;
-                                // -webkit-background-clip: text;
-                                // -moz-background-clip: text;
-                                // background-clip: text;
-                                //-webkit-text-fill-color: transparent; 
-                                //display: initial;
-                            }
-                        }
+            div {
+                .emptyHeart {
+                    display: flex;
+                    position: absolute;
+                    margin-top: -4vh;
+                    left: 11vw;
+                    max-width: 40px;
+                    &:hover {
+                        cursor: pointer;
                     }
+                    // &:hover {
+                    //     color: transparent;
+                    //     display: none;
+                    //     background: linear-gradient(180deg, #FF79DA -10%, #9356DC 110%);
+                    //     background-image: linear-gradient(180deg, #FF79DA -10%, #9356DC 110%);
+                    // }
                 }
-   
+                .fullHeart {
+                    display: flex;
+                    position: absolute;
+                    margin-top: -4vh;
+                    left: 11vw;
+                    max-width: 40px;
+                    background: linear-gradient(180deg, #FF79DA -10%, #9356DC 110%);
+                    background-image: linear-gradient(180deg, #FF79DA -10%, #9356DC 110%);
+                    //max-width: 90px;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    transform: scale(0);
+                    &:hover {
+                        cursor: pointer;
+                    }                    
+                }
+                &:hover > .fullHeart {
+                    transform: scale(1.05);
+                    transform-origin: 50% 50%;
+                    transition: transform 700ms;
+                }
+                &:hover > .emptyHeart {
+                    transform: scale(.96);
+                    transition: transform 700ms;
+                }
+                
+
             }
         }
         &_names {
@@ -328,8 +335,29 @@ html,body {
     }
     
 }
-
-
+// .emptyHeart {
+//     position: absolute;
+//     margin-left: -38vw;
+//     margin-top: -4vh;
+//     &:hover {
+//         color: transparent;
+//         display: none;
+//     }
+// }
+// .fullHeart {
+//     margin-left: -38vw;
+//     margin-top: -4vh;
+//     color: transparent;
+//     &:hover {
+//         position: absolute;
+//         background: linear-gradient(180deg, #FF79DA -10%, #9356DC 110%);
+//         background-image: linear-gradient(180deg, #FF79DA -10%, #9356DC 110%);
+//         -webkit-background-clip: text;
+//         -webkit-text-fill-color: transparent;
+//         cursor: pointer;
+//     }
+    
+// }
 
 
 
