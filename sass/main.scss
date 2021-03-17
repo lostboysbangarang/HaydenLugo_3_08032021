@@ -281,14 +281,38 @@ html,body {
             }
             &_heart {
                 z-index: 2;
-                background-color: #9356DC;
+                
                 margin-top: -4vh;
                 margin-left: 4vh;
-                
+                position: absolute;
                 align-items: flex-start;
                 justify-content: flex-start;
-               
-                
+                .fas {
+                    font-size: 2em;
+                    color: $secondary;
+                    display: block;
+                    background: -webkit-linear-gradient(180deg, $secondary -10%, $primary 110%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    &.fa-heart{
+                        &.fa-stack-2x {
+                            &.fullHeart, .fullHeart:before {
+                                //transform: scale(0);
+                                font-size: 72px;
+                                // background: -moz-linear-gradient(180deg, $secondary -10%, $primary 110%);
+                                background: -webkit-gradient(linear, left top, left bottom, from($secondary), to(primary));
+                                // background: linear-gradient(180deg, $secondary -10%, $primary 110%);
+                                // //color: $primary;
+                                // -webkit-background-clip: text;
+                                // -moz-background-clip: text;
+                                // background-clip: text;
+                                -webkit-text-fill-color: transparent; 
+                                display: initial;
+                            }
+                        }
+                    }
+                }
+   
             }
         }
         &_names {
@@ -300,6 +324,7 @@ html,body {
     }
     
 }
+
 
 
 
