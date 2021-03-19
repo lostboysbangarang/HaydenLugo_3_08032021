@@ -364,17 +364,20 @@ html, body {
   border-radius: 5vh;
 }
 .bodyDiv_HowItWorks_list_1_1 {
-  margin-right: 3vw;
+  margin-right: 1vw;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #9356DC;
-  height: inherit;
-  width: 5vh;
+  color: #FFFFFF;
+  font-size: 0.75em;
+  height: 2vh;
+  width: 2vh;
   border-radius: 5vh;
+  margin-left: -0.5vw;
 }
 .bodyDiv_HowItWorks_list_1_2 {
-  margin-right: 3vw;
+  margin-right: 1vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -393,17 +396,20 @@ html, body {
   border-radius: 5vh;
 }
 .bodyDiv_HowItWorks_list_2_1 {
-  margin-right: 3vw;
+  margin-right: 1vw;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #9356DC;
-  height: inherit;
-  width: 5vh;
+  color: #FFFFFF;
+  font-size: 0.75em;
+  height: 2vh;
+  width: 2vh;
   border-radius: 5vh;
+  margin-left: -0.5vw;
 }
 .bodyDiv_HowItWorks_list_2_2 {
-  margin-right: 3vw;
+  margin-right: 1vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -422,20 +428,32 @@ html, body {
   border-radius: 5vh;
 }
 .bodyDiv_HowItWorks_list_3_1 {
-  margin-right: 3vw;
+  margin-right: 1vw;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #9356DC;
-  height: inherit;
-  width: 5vh;
+  color: #FFFFFF;
+  font-size: 0.75em;
+  height: 2vh;
+  width: 2vh;
   border-radius: 5vh;
+  margin-left: -0.5vw;
 }
 .bodyDiv_HowItWorks_list_3_2 {
-  margin-right: 3vw;
+  margin-right: 1vw;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.bodyDiv_HowItWorks_list .phone {
+  margin-right: 30px;
+}
+.bodyDiv_HowItWorks_list .burger {
+  margin-right: 20px;
+}
+.bodyDiv_HowItWorks_list .shop {
+  margin-right: 15px;
 }
 
 .restaurants_div {
@@ -534,6 +552,10 @@ html, body {
   font-size: 1.5em;
   font-weight: bold;
   line-height: 0.1vh;
+  padding-right: 1vw;
+}
+.restaurants_div_flex_city {
+  padding-right: 1vw;
 }
 
 .foot {
@@ -545,27 +567,27 @@ html, body {
 }
 .foot_1 {
   font-family: "Shrikhand", cursive;
-  padding-left: 6vw;
+  padding-left: 100px;
 }
 .foot_2 {
-  padding-left: 5vw;
+  padding-left: 95px;
   display: flex;
 }
 .foot_2 i {
-  margin-right: 1.4vw;
+  margin-right: 27px;
 }
 .foot_3 {
-  padding-left: 5vw;
+  padding-left: 95px;
   display: flex;
 }
 .foot_3 i {
-  margin-right: 1vw;
+  margin-right: 20px;
 }
 .foot_4 {
-  padding-left: 7vw;
+  padding-left: 135px;
 }
 .foot_5 {
-  padding-left: 7vw;
+  padding-left: 135px;
 }
 
 /*# sourceMappingURL=style.css.map */

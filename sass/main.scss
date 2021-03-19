@@ -99,16 +99,20 @@ $white: #FFFFFF;
             height: 5vh;
             margin-bottom: 2.5vh;
             border-radius: 5vh;
+            
             @for $j from 1 through 2 {
                 &_#{$j}{
-                    margin-right: 3vw;
+                    margin-right: 1vw;
                     @include centering;
                     
                     @if $j == 1 {
                         background-color: $primary;
-                        height: inherit;
-                        width: 5vh;
+                        color: $white;
+                        font-size: .75em;
+                        height: 2vh;
+                        width: 2vh;
                         border-radius: 5vh;
+                        margin-left: -.5vw;
                     }
                 }
             }           
@@ -127,7 +131,17 @@ $white: #FFFFFF;
 @mixin shadows($color: lighter($color), $size: $size) {
     box-shadow: 0px $size $size lighter($color);
 }
-
+@mixin maps {
+    @for $i from 1 through 4 {
+        &_#{$i} {
+            background-image: url(../Resources/images/restaurants/#{$i}#{$i}.jpg);
+            background-size: cover;
+            background-position: 50% 50%;
+            border-radius: 5vh 5vh 0vh 0vh;
+            height: 27vh;
+        }
+    }
+}
 
 
 @-webkit-keyframes imageAnimation {
@@ -242,21 +256,20 @@ html,body {
         font-size: 1.5em;
         &_list {
             @include theWorks;
-            
+            & .phone {
+               margin-right: 30px; 
+            }
+            & .burger {
+                margin-right: 20px;
+            }
+            & .shop {
+                margin-right: 15px;
+            }
         }
+        
     }
 }
-@mixin maps {
-    @for $i from 1 through 4 {
-        &_#{$i} {
-            background-image: url(../Resources/images/restaurants/#{$i}#{$i}.jpg);
-            background-size: cover;
-            background-position: 50% 50%;
-            border-radius: 5vh 5vh 0vh 0vh;
-            height: 27vh;
-        }
-    }
-}
+
 .restaurants_div {
     @include centering;
     background-color: $bckgrnd_Black;
@@ -331,6 +344,10 @@ html,body {
             font-size: 1.5em;
             font-weight: bold;
             line-height: .1vh;
+            padding-right: 1vw;
+        }
+        &_city {
+            padding-right: 1vw;
         }
     }
     
@@ -371,20 +388,20 @@ html,body {
         &_#{$i} {
             @if $i==1 {
                 font-family: 'Shrikhand', cursive;
-                padding-left: 6vw;
+                padding-left: 100px;
             }@else if $i==5 or $i==4 {
-                padding-left: 7vw;
+                padding-left: 135px;
             }@else {
-                padding-left: 5vw;
+                padding-left: 95px;
                 display: flex;
                 @if $i==2 {
                     & i {
-                        margin-right: 1.4vw;
+                        margin-right: 27px;
                     }
                 }
                 @if $i==3 {
                     & i {
-                        margin-right: 1vw;
+                        margin-right: 20px;
                     }
                 }
             }
