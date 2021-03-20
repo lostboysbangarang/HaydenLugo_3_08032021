@@ -93,6 +93,31 @@
     opacity: 0;
   }
 }
+@-webkit-keyframes leftBound {
+  100% {
+    transform: translateX(0vw);
+  }
+}
+@-moz-keyframes leftBound {
+  100% {
+    transform: translateX(0vw);
+  }
+}
+@-o-keyframes leftBound {
+  100% {
+    transform: translateX(0vw);
+  }
+}
+@-ms-keyframes leftBound {
+  100% {
+    transform: translateX(0vw);
+  }
+}
+@keyframes leftBound {
+  100% {
+    transform: translateX(0vw);
+  }
+}
 html, body {
   width: 100%;
   margin: 0px;
@@ -149,14 +174,15 @@ html, body {
   animation-name: imageAnimation;
 }
 .bodyDiv_slideShow li:nth-child(1) span {
+  visibility: hidden;
   background: linear-gradient(rgba(153, 226, 208, 0.45));
   background-image: url(../Resources/images/restaurants/1.jpg);
   z-index: -1;
   width: 100%;
-  height: 74vh;
+  height: 70.6vh;
   position: absolute;
   top: 16vh;
-  left: 0vh;
+  left: 0vw;
   color: transparent;
   background-size: cover;
   background-position: 50% 50%;
@@ -193,10 +219,10 @@ html, body {
   background-image: url(../Resources/images/restaurants/2.jpg);
   z-index: -1;
   width: 100%;
-  height: 74vh;
+  height: 70.6vh;
   position: absolute;
   top: 16vh;
-  left: 0vh;
+  left: 0vw;
   color: transparent;
   background-size: cover;
   background-position: 50% 50%;
@@ -238,10 +264,10 @@ html, body {
   background-image: url(../Resources/images/restaurants/3.jpg);
   z-index: -1;
   width: 100%;
-  height: 74vh;
+  height: 70.6vh;
   position: absolute;
   top: 16vh;
-  left: 0vh;
+  left: 0vw;
   color: transparent;
   background-size: cover;
   background-position: 50% 50%;
@@ -283,10 +309,10 @@ html, body {
   background-image: url(../Resources/images/restaurants/4.jpg);
   z-index: -1;
   width: 100%;
-  height: 74vh;
+  height: 70.6vh;
   position: absolute;
   top: 16vh;
-  left: 0vh;
+  left: 0vw;
   color: transparent;
   background-size: cover;
   background-position: 50% 50%;
@@ -556,6 +582,41 @@ html, body {
 }
 .restaurants_div_flex_city {
   padding-right: 1vw;
+}
+
+@keyframes spinCycle {
+  0% {
+    transform: rotate(0deg);
+  }
+  70% {
+    opacity: 1;
+  }
+  98% {
+    transform: rotate(360deg);
+  }
+  100% {
+    opacity: 0;
+    z-index: -100;
+  }
+}
+.loadingMatrix {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  position: absolute;
+  left: 37.5vw;
+  top: 37.5vw;
+  transform: rotate(90deg);
+  animation: spinCycle 1500ms forwards;
+  animation-iteration-count: 3;
+}
+.loadingMatrix .spinner {
+  font-size: 25vw;
+}
+
+.bodyDiv_slideShow {
+  overflow: hidden;
 }
 
 .foot {
