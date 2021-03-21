@@ -18,14 +18,8 @@ $intro: 1;
     @for $i from 1 through 4 {
         &:nth-child(#{$i}) span {
             @if $i == 1 {
-                @if $intro == 1 {
-                    visibility: hidden;
-                    $intro: 2;
-                }
-                @else if $intro == 2 {
-                    visibility: visible;
-                }
-                
+                //visibility: hidden;
+                //animation: leftBound 0ms ease-out $spinCycle*3 forwards;
                 background: linear-gradient(rgba(153, 226, 208, .45));
                 background-image: url(../Resources/images/restaurants/#{$i}.jpg);
                 z-index: -1;
@@ -177,7 +171,7 @@ $intro: 1;
     }
 
     100% {
-        transform: translateX(0vw);
+        visibility: visible;
     }
 }
 @-moz-keyframes leftBound{
@@ -185,7 +179,7 @@ $intro: 1;
     }
 
     100% {
-        transform: translateX(0vw);
+        visibility: visible;
     }
 }
 @-o-keyframes leftBound{
@@ -193,7 +187,7 @@ $intro: 1;
     }
 
     100% {
-        transform: translateX(0vw);
+        visibility: visible;
     }
 }
 @-ms-keyframes leftBound{
@@ -201,7 +195,7 @@ $intro: 1;
     }
 
     100% {
-        transform: translateX(0vw);
+        visibility: visible;
     }
 }
 @keyframes leftBound{
@@ -209,7 +203,7 @@ $intro: 1;
     }
 
     100% {
-        transform: translateX(0vw);
+        visibility: visible;
     }
 }
 

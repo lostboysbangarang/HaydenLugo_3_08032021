@@ -95,27 +95,27 @@
 }
 @-webkit-keyframes leftBound {
   100% {
-    transform: translateX(0vw);
+    visibility: visible;
   }
 }
 @-moz-keyframes leftBound {
   100% {
-    transform: translateX(0vw);
+    visibility: visible;
   }
 }
 @-o-keyframes leftBound {
   100% {
-    transform: translateX(0vw);
+    visibility: visible;
   }
 }
 @-ms-keyframes leftBound {
   100% {
-    transform: translateX(0vw);
+    visibility: visible;
   }
 }
 @keyframes leftBound {
   100% {
-    transform: translateX(0vw);
+    visibility: visible;
   }
 }
 html, body {
@@ -174,7 +174,6 @@ html, body {
   animation-name: imageAnimation;
 }
 .bodyDiv_slideShow li:nth-child(1) span {
-  visibility: hidden;
   background: linear-gradient(rgba(153, 226, 208, 0.45));
   background-image: url(../Resources/images/restaurants/1.jpg);
   z-index: -1;
