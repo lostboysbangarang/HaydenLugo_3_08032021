@@ -18,9 +18,9 @@ $intro: 1;
     @for $i from 1 through 4 {
         &:nth-child(#{$i}) span {
             @if $i == 1 {
-                //visibility: hidden;
+                visibility: visible;
                 //animation: leftBound 0ms ease-out $spinCycle*3 forwards;
-                background: linear-gradient(rgba(153, 226, 208, .45));
+                //background: linear-gradient(rgba(153, 226, 208, .45));
                 background-image: url(../Resources/images/restaurants/#{$i}.jpg);
                 z-index: -1;
                 width: 100%;
@@ -45,7 +45,7 @@ $intro: 1;
                 -ms-animation: imageAnimation 24s linear infinite 0s;
                 animation: imageAnimation 24s linear infinite 0s;
             }@else {
-                background: linear-gradient(rgba(153, 226, 208, .45));
+                //background: linear-gradient(rgba(153, 226, 208, .45));
                 background-image: url(../Resources/images/restaurants/#{$i}.jpg);
                 z-index: -1;
                 width: 100%;
@@ -75,6 +75,7 @@ $intro: 1;
             }
         }
         &:nth-child(#{$i}) div {
+            visibility: visible;
             position: absolute;
             right: 4vh;
             bottom: 12vh;
@@ -93,7 +94,100 @@ $intro: 1;
         }
     }
 }
-
+@mixin singleTrans {
+    
+    @for $i from 1 through 4 {
+        &:nth-child(#{$i}) span {
+            @if $i == 1 {
+                visibility: hidden;
+                //animation: leftBound 0ms ease-out $spinCycle*3 forwards;
+                background: linear-gradient(rgba(153, 226, 208, .45));
+                background-image: url(../Resources/images/restaurants/#{$i}.jpg);
+                z-index: -1;
+                width: 100%;
+                height: 70.6vh;
+                position: absolute;
+                top: 16vh;
+                left: 0vw;
+                color: transparent;
+                background-size: cover;
+                background-position: 50% 50%;
+                background-repeat: none;
+                opacity: 0;
+                padding-bottom: 0px;
+                margin-bottom: 0px;
+                
+                
+                
+                -webkit-backface-visibility: hidden;
+                -webkit-animation: imageAnimation 24s linear $spinCycle*3 0s;
+                -moz-animation: imageAnimation 24s linear $spinCycle*3 0s;
+                -o-animation: imageAnimation 24s linear $spinCycle*3 0s;
+                -ms-animation: imageAnimation 24s linear $spinCycle*3 0s;
+                animation: imageAnimation 24s linear $spinCycle*3 0s;
+            }@else {
+                background: linear-gradient(rgba(153, 226, 208, .45));
+                background-image: url(../Resources/images/restaurants/#{$i}.jpg);
+                z-index: -1;
+                width: 100%;
+                height: 70.6vh;
+                position: absolute;
+                top: 16vh;
+                left: 0vw;
+                color: transparent;
+                background-size: cover;
+                background-position: 50% 50%;
+                background-repeat: none;
+                opacity: 0;
+                padding-bottom: 0px;
+                margin-bottom: 0px;
+                -webkit-backface-visibility: hidden;
+                -webkit-animation: imageAnimation 24s linear 0s;
+                -moz-animation: imageAnimation 24s linear 0s;
+                -o-animation: imageAnimation 24s linear 0s;
+                -ms-animation: imageAnimation 24s linear 0s;
+                animation: imageAnimation 24s linear 0s;
+                -webkit-animation-delay: #{($i - 1) *6}s;
+                -moz-animation-delay: #{($i - 1) *6}s;
+                -o-animation-delay: #{($i - 1) *6}s;
+                -ms-animation-delay: #{($i - 1) *6}s;
+                animation-delay: #{($i - 1) *6}s;
+                
+            }
+        }
+        &:nth-child(#{$i}) div {
+            @if $i == 1 {
+                visibility: hidden;
+                position: absolute;
+                right: 4vh;
+                bottom: 12vh;
+                opacity: 0;
+                -webkit-backface-visibility: hidden;
+                -webkit-animation: imageAnimation 24s linear $spinCycle*3 0s;
+                -moz-animation: imageAnimation 24s linear $spinCycle*3 0s;
+                -o-animation: imageAnimation 24s linear $spinCycle*3 0s;
+                -ms-animation: imageAnimation 24s linear $spinCycle*3 0s;
+                animation: imageAnimation 24s linear $spinCycle*3 0s;
+            }
+            position: absolute;
+            right: 4vh;
+            bottom: 12vh;
+            opacity: 0;
+            -webkit-backface-visibility: hidden;
+            -webkit-animation: imageAnimation 24s linear 0s;
+            -moz-animation: imageAnimation 24s linear 0s;
+            -o-animation: imageAnimation 24s linear 0s;
+            -ms-animation: imageAnimation 24s linear 0s;
+            animation: imageAnimation 24s linear 0s; 
+            -webkit-animation-delay: #{($i - 1) *6}s;
+            -moz-animation-delay: #{($i - 1) *6}s;
+            -o-animation-delay: #{($i - 1) *6}s;
+            -ms-animation-delay: #{($i - 1) *6}s;
+            animation-delay: #{($i - 1) *6}s;
+        }
+    }
+    //@include trans;
+}
 @mixin theWorks {
     @for $i from 1 through 3 {
         &_#{$i} {
@@ -135,6 +229,13 @@ $intro: 1;
     37.5% {opacity: 0}
     100% {opacity: 0}
 }
+@mixin trajectory{
+    0% {}
+    100% {
+        transform: translateX(0vw);
+        overflow: visible;
+    }
+}
 @mixin shadows($color: lighter($color), $size: $size) {
     box-shadow: 0px $size $size lighter($color);
 }
@@ -166,44 +267,37 @@ $intro: 1;
 @keyframes imageAnimation {
     @include keys;
 }
-@-webkit-keyframes leftBound{
-    0% {
-    }
 
-    100% {
-        visibility: visible;
-    }
+
+@-webkit-keyframes flyby{
+    @include trajectory
 }
-@-moz-keyframes leftBound{
-    0% {
-    }
-
-    100% {
-        visibility: visible;
-    }
+@-moz-keyframes flyby{
+    @include trajectory
 }
-@-o-keyframes leftBound{
-    0% {
-    }
-
-    100% {
-        visibility: visible;
-    }
+@-o-keyframes flyby{
+    @include trajectory
 }
-@-ms-keyframes leftBound{
-    0% {
-    }
-
-    100% {
-        visibility: visible;
-    }
+@-ms-keyframes flyby{
+    @include trajectory
 }
-@keyframes leftBound{
+@keyframes flyby{
+    @include trajectory
+}
+@keyframes spinCycle{
     0% {
+        transform: rotate(0deg);
     }
-
+    70% {
+        opacity: 1;
+    }
+    98% {
+        transform: rotate(360deg);
+    }
     100% {
-        visibility: visible;
+        opacity: 0;
+        //display: none;
+        //z-index: -100;
     }
 }
 
@@ -271,6 +365,8 @@ html,body {
     height: 69vh;
     &_slideShow{
         & li {
+            
+            // @include singleTrans;
             @include trans;
             list-style-type: none;
             animation-name: imageAnimation;
@@ -399,29 +495,13 @@ html,body {
     
 }
 
-@keyframes spinCycle{
-    0% {
-        transform: rotate(0deg);
-    }
-    70% {
-        opacity: 1;
-    }
-    98% {
-        transform: rotate(360deg);
-    }
-    100% {
-        opacity: 0;
-        //display: none;
-        z-index: -100;
-    }
-}
 
 .loadingMatrix {
     @include centering;
     z-index: 10;
     position: absolute;
     left: 37.5vw;
-    top: 37.5vw;
+    top: 27.5vw;
     // transform: translateX(-50%);
     // transform: translateY(-50%);
     transform: rotate(90deg);
@@ -436,7 +516,16 @@ html,body {
 
 }
 
-
+.bodyDiv_text, .restaurants_div {
+    overflow: hidden;
+    transform: translateX(100vw);
+    animation: flyby $spinCycle*3 $spinCycle*2 forwards;
+}
+.bodyDiv_HowItWorks {
+    overflow: hidden;
+    transform: translateX(-100vw);
+    animation: flyby $spinCycle*3 $spinCycle*2 forwards;
+}
 
 .foot {
     background-color: black;

@@ -93,29 +93,48 @@
     opacity: 0;
   }
 }
-@-webkit-keyframes leftBound {
+@-webkit-keyframes flyby {
   100% {
-    visibility: visible;
+    transform: translateX(0vw);
+    overflow: visible;
   }
 }
-@-moz-keyframes leftBound {
+@-moz-keyframes flyby {
   100% {
-    visibility: visible;
+    transform: translateX(0vw);
+    overflow: visible;
   }
 }
-@-o-keyframes leftBound {
+@-o-keyframes flyby {
   100% {
-    visibility: visible;
+    transform: translateX(0vw);
+    overflow: visible;
   }
 }
-@-ms-keyframes leftBound {
+@-ms-keyframes flyby {
   100% {
-    visibility: visible;
+    transform: translateX(0vw);
+    overflow: visible;
   }
 }
-@keyframes leftBound {
+@keyframes flyby {
   100% {
-    visibility: visible;
+    transform: translateX(0vw);
+    overflow: visible;
+  }
+}
+@keyframes spinCycle {
+  0% {
+    transform: rotate(0deg);
+  }
+  70% {
+    opacity: 1;
+  }
+  98% {
+    transform: rotate(360deg);
+  }
+  100% {
+    opacity: 0;
   }
 }
 html, body {
@@ -174,7 +193,7 @@ html, body {
   animation-name: imageAnimation;
 }
 .bodyDiv_slideShow li:nth-child(1) span {
-  background: linear-gradient(rgba(153, 226, 208, 0.45));
+  visibility: visible;
   background-image: url(../Resources/images/restaurants/1.jpg);
   z-index: -1;
   width: 100%;
@@ -197,6 +216,7 @@ html, body {
   animation: imageAnimation 24s linear infinite 0s;
 }
 .bodyDiv_slideShow li:nth-child(1) div {
+  visibility: visible;
   position: absolute;
   right: 4vh;
   bottom: 12vh;
@@ -214,7 +234,6 @@ html, body {
   animation-delay: 0s;
 }
 .bodyDiv_slideShow li:nth-child(2) span {
-  background: linear-gradient(rgba(153, 226, 208, 0.45));
   background-image: url(../Resources/images/restaurants/2.jpg);
   z-index: -1;
   width: 100%;
@@ -242,6 +261,7 @@ html, body {
   animation-delay: 6s;
 }
 .bodyDiv_slideShow li:nth-child(2) div {
+  visibility: visible;
   position: absolute;
   right: 4vh;
   bottom: 12vh;
@@ -259,7 +279,6 @@ html, body {
   animation-delay: 6s;
 }
 .bodyDiv_slideShow li:nth-child(3) span {
-  background: linear-gradient(rgba(153, 226, 208, 0.45));
   background-image: url(../Resources/images/restaurants/3.jpg);
   z-index: -1;
   width: 100%;
@@ -287,6 +306,7 @@ html, body {
   animation-delay: 12s;
 }
 .bodyDiv_slideShow li:nth-child(3) div {
+  visibility: visible;
   position: absolute;
   right: 4vh;
   bottom: 12vh;
@@ -304,7 +324,6 @@ html, body {
   animation-delay: 12s;
 }
 .bodyDiv_slideShow li:nth-child(4) span {
-  background: linear-gradient(rgba(153, 226, 208, 0.45));
   background-image: url(../Resources/images/restaurants/4.jpg);
   z-index: -1;
   width: 100%;
@@ -332,6 +351,7 @@ html, body {
   animation-delay: 18s;
 }
 .bodyDiv_slideShow li:nth-child(4) div {
+  visibility: visible;
   position: absolute;
   right: 4vh;
   bottom: 12vh;
@@ -583,21 +603,6 @@ html, body {
   padding-right: 1vw;
 }
 
-@keyframes spinCycle {
-  0% {
-    transform: rotate(0deg);
-  }
-  70% {
-    opacity: 1;
-  }
-  98% {
-    transform: rotate(360deg);
-  }
-  100% {
-    opacity: 0;
-    z-index: -100;
-  }
-}
 .loadingMatrix {
   display: flex;
   justify-content: center;
@@ -605,7 +610,7 @@ html, body {
   z-index: 10;
   position: absolute;
   left: 37.5vw;
-  top: 37.5vw;
+  top: 27.5vw;
   transform: rotate(90deg);
   animation: spinCycle 1500ms forwards;
   animation-iteration-count: 3;
@@ -616,6 +621,18 @@ html, body {
 
 .bodyDiv_slideShow {
   overflow: hidden;
+}
+
+.bodyDiv_text, .restaurants_div {
+  overflow: hidden;
+  transform: translateX(100vw);
+  animation: flyby 4500ms 3000ms forwards;
+}
+
+.bodyDiv_HowItWorks {
+  overflow: hidden;
+  transform: translateX(-100vw);
+  animation: flyby 4500ms 3000ms forwards;
 }
 
 .foot {
