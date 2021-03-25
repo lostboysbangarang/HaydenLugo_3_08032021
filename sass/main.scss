@@ -1,3 +1,5 @@
+@import url("../sass/mobile.scss") (screen and max-width: 640px);
+
 $primary: #9356DC;
 $secondary: #FF79DA;
 $tertiary: #99E2D0;
@@ -24,7 +26,7 @@ $intro: 1;
                 background-image: url(../Resources/images/restaurants/#{$i}.jpg);
                 z-index: -1;
                 width: 100%;
-                height: 70.6vh;
+                height: 74vh;
                 position: absolute;
                 top: 16vh;
                 left: 0vw;
@@ -49,7 +51,7 @@ $intro: 1;
                 background-image: url(../Resources/images/restaurants/#{$i}.jpg);
                 z-index: -1;
                 width: 100%;
-                height: 70.6vh;
+                height: 74vh;
                 position: absolute;
                 top: 16vh;
                 left: 0vw;
@@ -94,100 +96,7 @@ $intro: 1;
         }
     }
 }
-@mixin singleTrans {
-    
-    @for $i from 1 through 4 {
-        &:nth-child(#{$i}) span {
-            @if $i == 1 {
-                visibility: hidden;
-                //animation: leftBound 0ms ease-out $spinCycle*3 forwards;
-                background: linear-gradient(rgba(153, 226, 208, .45));
-                background-image: url(../Resources/images/restaurants/#{$i}.jpg);
-                z-index: -1;
-                width: 100%;
-                height: 70.6vh;
-                position: absolute;
-                top: 16vh;
-                left: 0vw;
-                color: transparent;
-                background-size: cover;
-                background-position: 50% 50%;
-                background-repeat: none;
-                opacity: 0;
-                padding-bottom: 0px;
-                margin-bottom: 0px;
-                
-                
-                
-                -webkit-backface-visibility: hidden;
-                -webkit-animation: imageAnimation 24s linear $spinCycle*3 0s;
-                -moz-animation: imageAnimation 24s linear $spinCycle*3 0s;
-                -o-animation: imageAnimation 24s linear $spinCycle*3 0s;
-                -ms-animation: imageAnimation 24s linear $spinCycle*3 0s;
-                animation: imageAnimation 24s linear $spinCycle*3 0s;
-            }@else {
-                background: linear-gradient(rgba(153, 226, 208, .45));
-                background-image: url(../Resources/images/restaurants/#{$i}.jpg);
-                z-index: -1;
-                width: 100%;
-                height: 70.6vh;
-                position: absolute;
-                top: 16vh;
-                left: 0vw;
-                color: transparent;
-                background-size: cover;
-                background-position: 50% 50%;
-                background-repeat: none;
-                opacity: 0;
-                padding-bottom: 0px;
-                margin-bottom: 0px;
-                -webkit-backface-visibility: hidden;
-                -webkit-animation: imageAnimation 24s linear 0s;
-                -moz-animation: imageAnimation 24s linear 0s;
-                -o-animation: imageAnimation 24s linear 0s;
-                -ms-animation: imageAnimation 24s linear 0s;
-                animation: imageAnimation 24s linear 0s;
-                -webkit-animation-delay: #{($i - 1) *6}s;
-                -moz-animation-delay: #{($i - 1) *6}s;
-                -o-animation-delay: #{($i - 1) *6}s;
-                -ms-animation-delay: #{($i - 1) *6}s;
-                animation-delay: #{($i - 1) *6}s;
-                
-            }
-        }
-        &:nth-child(#{$i}) div {
-            @if $i == 1 {
-                visibility: hidden;
-                position: absolute;
-                right: 4vh;
-                bottom: 12vh;
-                opacity: 0;
-                -webkit-backface-visibility: hidden;
-                -webkit-animation: imageAnimation 24s linear $spinCycle*3 0s;
-                -moz-animation: imageAnimation 24s linear $spinCycle*3 0s;
-                -o-animation: imageAnimation 24s linear $spinCycle*3 0s;
-                -ms-animation: imageAnimation 24s linear $spinCycle*3 0s;
-                animation: imageAnimation 24s linear $spinCycle*3 0s;
-            }
-            position: absolute;
-            right: 4vh;
-            bottom: 12vh;
-            opacity: 0;
-            -webkit-backface-visibility: hidden;
-            -webkit-animation: imageAnimation 24s linear 0s;
-            -moz-animation: imageAnimation 24s linear 0s;
-            -o-animation: imageAnimation 24s linear 0s;
-            -ms-animation: imageAnimation 24s linear 0s;
-            animation: imageAnimation 24s linear 0s; 
-            -webkit-animation-delay: #{($i - 1) *6}s;
-            -moz-animation-delay: #{($i - 1) *6}s;
-            -o-animation-delay: #{($i - 1) *6}s;
-            -ms-animation-delay: #{($i - 1) *6}s;
-            animation-delay: #{($i - 1) *6}s;
-        }
-    }
-    //@include trans;
-}
+
 @mixin theWorks {
     @for $i from 1 through 3 {
         &_#{$i} {
@@ -200,6 +109,9 @@ $intro: 1;
             height: 5vh;
             margin-bottom: 2.5vh;
             border-radius: 5vh;
+            @media (max-width: 640px) {
+                width: 80vw;
+            }
             
             @for $j from 1 through 2 {
                 &_#{$j}{
@@ -214,6 +126,7 @@ $intro: 1;
                         width: 2vh;
                         border-radius: 5vh;
                         margin-left: -.5vw;
+                        
                     }
                 }
             }           
@@ -230,7 +143,9 @@ $intro: 1;
     100% {opacity: 0}
 }
 @mixin trajectory{
-    0% {}
+    0% {
+        visibility: hidden;
+    }
     100% {
         transform: translateX(0vw);
         overflow: visible;
@@ -323,6 +238,8 @@ $intro: 1;
 
 html,body {
     width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
     margin: 0px;
     padding: 0px;
     font-family: 'Roboto', sans-serif;
@@ -337,6 +254,20 @@ html,body {
     position: relative;
     &_back {
         visibility: hidden;
+    }
+    &_logo{
+        @media (max-width: 640px) {
+            display: none;
+        }
+        &_text {
+            display: none;
+            @media (max-width: 640px) {
+                display: inline-block;
+                font-family: 'Shrikhand', cursive;
+                font-size: 2.5em;
+                
+            }
+        }
     }
 }
 .location {
@@ -363,6 +294,7 @@ html,body {
 
 .bodyDiv {
     height: 69vh;
+    
     &_slideShow{
         & li {
             
@@ -378,8 +310,13 @@ html,body {
         flex-direction: column;
         margin-top: 5vh;
         font-size: 2em;
+        @media (max-width: 640px) {
+            font-size: 1em;
+        }
         &_info {
             margin-top: 2.5vh;
+            text-shadow: .5px .5px $white;
+            
         }
         &_explore {
             background-color: $primary;
@@ -396,6 +333,13 @@ html,body {
         flex-direction: column;
         margin-top: 5vh;
         font-size: 1.5em;
+        @media (max-width: 640px) {
+            font-size: 1em;
+        }
+        &_head {
+            text-shadow: .5px .5px $white;
+            margin-bottom: 2vh;
+        }
         &_list {
             @include theWorks;
             & .phone {
@@ -438,19 +382,15 @@ html,body {
             div {
                 .emptyHeart {
                     display: flex;
-                    position: absolute;
                     margin-top: -4vh;
                     left: 11vw;
                     max-width: 40px;
+                    @media (max-width: 640px) {
+                        margin-top: -5vh;
+                    }
                     &:hover {
                         cursor: pointer;
                     }
-                    // &:hover {
-                    //     color: transparent;
-                    //     display: none;
-                    //     background: linear-gradient(180deg, #FF79DA -10%, #9356DC 110%);
-                    //     background-image: linear-gradient(180deg, #FF79DA -10%, #9356DC 110%);
-                    // }
                 }
                 .fullHeart {
                     display: flex;
@@ -460,7 +400,6 @@ html,body {
                     max-width: 40px;
                     background: linear-gradient(180deg, #FF79DA -10%, #9356DC 110%);
                     background-image: linear-gradient(180deg, #FF79DA -10%, #9356DC 110%);
-                    //max-width: 90px;
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                     transform: scale(0);
@@ -487,6 +426,9 @@ html,body {
             font-weight: bold;
             line-height: .1vh;
             padding-right: 1vw;
+            @media (max-width: 640px) {
+                font-size: 1em;
+            }
         }
         &_city {
             padding-right: 1vw;
@@ -502,18 +444,12 @@ html,body {
     position: absolute;
     left: 37.5vw;
     top: 27.5vw;
-    // transform: translateX(-50%);
-    // transform: translateY(-50%);
     transform: rotate(90deg);
     animation: spinCycle $spinCycle forwards;
     animation-iteration-count: 3;
     .spinner {
         font-size: 25vw;
     }
-}
-.bodyDiv_slideShow {
-    overflow: hidden;
-
 }
 
 .bodyDiv_text, .restaurants_div {
@@ -556,6 +492,21 @@ html,body {
             }
         }
         
+    }
+    @media (max-width: 640px) {
+        @for $i from 1 through 5 {
+            &_#{$i} {
+                @if $i==1 {
+                    padding-left: 50px;
+                }
+                @else if $i==5 or $i==4 {
+                    padding-left: 88px;
+                }
+                @else {
+                    padding-left: 47.5px;
+                }
+            }
+        }
     }
     
 }
