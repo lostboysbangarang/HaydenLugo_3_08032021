@@ -1,0 +1,148 @@
+@import "./utils/mixins";
+@import "./utils/variables";
+@import "./utils/keyframes";
+@import "./utils/functions";
+@import "./layout/header";
+@import "./layout/footer";
+
+@keyframes checkMate {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        //transition: transform 4500ms ease-out;
+    }
+}
+
+
+
+
+
+.restaurant_image {
+    & img {
+        height: 70vw;
+        width: 100vw;
+        z-index: -10;
+        position: relative;
+    }
+}
+.card {
+    z-index: 2;
+    border-radius: 25px 25px 0px 0px;
+    margin-top: -5vh;
+    padding-top: 2.5vh;
+    background-color: $bckgrnd_Grey;
+    &_header {
+        display: flex;
+        
+        justify-content: space-around;
+        &_title {
+            @include centering;
+            font-size: 2em;
+            
+            font-family: 'Shrikhand', cursive;
+        }
+        div {
+            .emptyHeart {
+                position: relative;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            .fullHeart {
+                position: relative;
+                margin-top: -3.5vh;
+                background: linear-gradient(180deg, #FF79DA -10%, #9356DC 110%);
+                background-image: linear-gradient(180deg, #FF79DA -10%, #9356DC 110%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                transform: scale(0);
+                
+            }
+            &:hover > .fullHeart {
+                transform: scale(1.05);
+                transform-origin: 50% 50%;
+                transition: transform 700ms;
+            }
+            &:hover > .emptyHeart {
+                transform: scale(.96);
+                transition: transform 700ms;
+            }
+        }
+    }
+    &_entree {
+        margin-left: 7vw;
+        margin-top: 5vh;
+        &_greenbar {
+            width: 10vw;
+            height: .25vh;
+            background-color: $tertiary;
+        }
+    }
+    &_dish {
+        flex-wrap: wrap;
+        width: 95vw;
+        height: 69px;
+        background: $white;
+        margin-left: 2.5vw;
+        border-radius: 5vw;
+        text-align: left;
+        transition-property: transform;
+        transition-duration: 4500ms;
+        &:hover {
+            & div {
+                animation: checkMate backwards;
+                //animation-timing-function: ease-out;
+                transform: scaleX(1);
+                transition: 5000ms;
+                //transition: transform 4500ms ease-out;
+                display: flex;
+            }
+        }
+        & div {
+            transition-property: transform;
+            transition-duration: 4500ms;
+        }
+        &_flex {
+            display: flex;
+            justify-content: space-between;
+            & p {
+                margin-top:-10px;
+            }
+            & p:nth-of-type(1) {
+                margin-left: 25px;
+            }
+            &_check {
+                display: none;
+                justify-content: center;
+                margin-top: -53px;
+                width: 16.5%;
+                height: 46px;
+                padding-top: 23px;
+                border-top-right-radius: 5vw;
+                border-bottom-right-radius: 5vw;
+                background: $tertiary;
+                transform-origin: right;
+                transform: scaleX(0);
+                transition-property: transform;
+                transition-duration: 4500ms;
+                //transition: 4500ms;
+                & i {
+                    color: $white;
+                    font-size: 1.5em;
+                }
+            }
+           
+        }
+        & > h3 {
+            font-size: 1.5em;
+            margin-left: 30px;
+        }
+        
+
+
+    }
+     
+    
+}

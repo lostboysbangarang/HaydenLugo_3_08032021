@@ -218,6 +218,55 @@ html, body {
   margin-right: 10px;
 }
 
+.foot {
+  background-color: black;
+  height: 12vh;
+  bottom: 0px;
+  color: white;
+  padding-top: 1vh;
+}
+.foot_1 {
+  font-family: "Shrikhand", cursive;
+  padding-left: 100px;
+}
+.foot_2 {
+  padding-left: 95px;
+  display: flex;
+}
+.foot_2 i {
+  margin-right: 27px;
+}
+.foot_3 {
+  padding-left: 95px;
+  display: flex;
+}
+.foot_3 i {
+  margin-right: 20px;
+}
+.foot_4 {
+  padding-left: 135px;
+}
+.foot_5 {
+  padding-left: 135px;
+}
+@media (max-width: 640px) {
+  .foot_1 {
+    padding-left: 50px;
+  }
+  .foot_2 {
+    padding-left: 47.5px;
+  }
+  .foot_3 {
+    padding-left: 47.5px;
+  }
+  .foot_4 {
+    padding-left: 88px;
+  }
+  .foot_5 {
+    padding-left: 88px;
+  }
+}
+
 .bodyDiv {
   height: 69vh;
 }
@@ -621,6 +670,10 @@ html, body {
   align-items: flex-end;
   margin-right: 1vw;
 }
+.restaurants_div_flex_card_flex a, .restaurants_div_flex_card_flex a:visited {
+  text-decoration: none;
+  color: inherit;
+}
 .restaurants_div_flex_card div .emptyHeart {
   display: flex;
   margin-top: -4vh;
@@ -646,6 +699,11 @@ html, body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transform: scale(0);
+}
+@media (max-width: 640px) {
+  .restaurants_div_flex_card div .fullHeart {
+    margin-top: -5vh;
+  }
 }
 .restaurants_div_flex_card div .fullHeart:hover {
   cursor: pointer;
@@ -690,6 +748,15 @@ html, body {
 .loadingMatrix .spinner {
   font-size: 25vw;
 }
+@media (max-width: 640px) {
+  .loadingMatrix {
+    top: 50vh;
+    left: 25vw;
+  }
+  .loadingMatrix .spinner {
+    font-size: 50vw;
+  }
+}
 
 .bodyDiv_text, .restaurants_div {
   overflow: hidden;
@@ -703,53 +770,4 @@ html, body {
   animation: flyby 4500ms 3000ms forwards;
 }
 
-.foot {
-  background-color: black;
-  height: 12vh;
-  bottom: 0px;
-  color: white;
-  padding-top: 1vh;
-}
-.foot_1 {
-  font-family: "Shrikhand", cursive;
-  padding-left: 100px;
-}
-.foot_2 {
-  padding-left: 95px;
-  display: flex;
-}
-.foot_2 i {
-  margin-right: 27px;
-}
-.foot_3 {
-  padding-left: 95px;
-  display: flex;
-}
-.foot_3 i {
-  margin-right: 20px;
-}
-.foot_4 {
-  padding-left: 135px;
-}
-.foot_5 {
-  padding-left: 135px;
-}
-@media (max-width: 640px) {
-  .foot_1 {
-    padding-left: 50px;
-  }
-  .foot_2 {
-    padding-left: 47.5px;
-  }
-  .foot_3 {
-    padding-left: 47.5px;
-  }
-  .foot_4 {
-    padding-left: 88px;
-  }
-  .foot_5 {
-    padding-left: 88px;
-  }
-}
-
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=index.css.map */

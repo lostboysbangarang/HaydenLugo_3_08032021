@@ -1,0 +1,192 @@
+@import "../utils/mixins";
+@import "../utils/variables";
+@import "../utils/keyframes";
+@import "../utils/functions";
+@import "../layout/header";
+@import "../layout/footer";
+
+.bodyDiv {
+    height: 69vh;
+    
+    &_slideShow{
+        & li {
+            
+            // @include singleTrans;
+            @include trans;
+            list-style-type: none;
+            animation-name: imageAnimation;
+        }
+
+    }
+    &_text {
+        @include centering;
+        flex-direction: column;
+        margin-top: 5vh;
+        font-size: 2em;
+        @media (max-width: 640px) {
+            font-size: 1em;
+        }
+        &_info {
+            margin-top: 2.5vh;
+            text-shadow: .5px .5px $white;
+            
+        }
+        &_explore {
+            background-color: $primary;
+            background: linear-gradient($secondary,$primary);
+            padding: 2vh;
+            border-radius: 4vh;
+            margin-top: 7.5vh;
+            @include shadows($primary, .5vh);
+            
+        }
+    }
+    &_HowItWorks {
+        @include centering;
+        flex-direction: column;
+        margin-top: 5vh;
+        font-size: 1.5em;
+        @media (max-width: 640px) {
+            font-size: 1em;
+        }
+        &_head {
+            text-shadow: .5px .5px $white;
+            margin-bottom: 2vh;
+        }
+        &_list {
+            @include theWorks;
+            & .phone {
+               margin-right: 30px; 
+            }
+            & .burger {
+                margin-right: 20px;
+            }
+            & .shop {
+                margin-right: 15px;
+            }
+        }
+        
+    }
+}
+
+.restaurants_div {
+    @include centering;
+    background-color: $bckgrnd_Black;
+    flex-direction: column;
+    z-index: -1;
+    &_flex {
+        background-color: $tertiaryTrans;
+        height: 40vh;
+        width: 100vw;
+        @include maps;
+        @include centering;
+        &_card {
+            background-color: $bckgrnd_Grey;
+            margin-top: 2.5vh;
+            height: 35vh;
+            width: 80vw;
+            border-radius: 5vh;
+            &_flex {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                margin-right: 1vw;
+                & a, & a:visited {
+                    text-decoration: none;
+                    color: inherit;
+                }
+            }
+            div {
+                .emptyHeart {
+                    display: flex;
+                    margin-top: -4vh;
+                    left: 11vw;
+                    max-width: 40px;
+                    @media (max-width: 640px) {
+                        margin-top: -5vh;
+                    }
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+                .fullHeart {
+                    display: flex;
+                    position: absolute;
+                    margin-top: -4vh;
+                    left: 11vw;
+                    max-width: 40px;
+                    background: linear-gradient(180deg, #FF79DA -10%, #9356DC 110%);
+                    background-image: linear-gradient(180deg, #FF79DA -10%, #9356DC 110%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    transform: scale(0);
+                    @media (max-width: 640px){
+                        margin-top: -5vh;
+                    }
+                    &:hover {
+                        cursor: pointer;
+                    }                    
+                }
+                &:hover > .fullHeart {
+                    transform: scale(1.05);
+                    transform-origin: 50% 50%;
+                    transition: transform 700ms;
+                }
+                &:hover > .emptyHeart {
+                    transform: scale(.96);
+                    transition: transform 700ms;
+                }
+                
+
+            }
+        }
+        &_names {
+            display: flex;
+            font-size: 1.5em;
+            font-weight: bold;
+            line-height: .1vh;
+            padding-right: 1vw;
+            @media (max-width: 640px) {
+                font-size: 1em;
+            }
+        }
+        &_city {
+            padding-right: 1vw;
+        }
+    }
+    
+}
+
+
+.loadingMatrix {
+    @include centering;
+    z-index: 10;
+    position: absolute;
+    left: 37.5vw;
+    top: 27.5vw;
+    transform: rotate(90deg);
+    animation: spinCycle $spinCycle forwards;
+    animation-iteration-count: 3;
+    .spinner {
+        font-size: 25vw;
+    }
+    @media (max-width: 640px) {
+        top: 50vh;
+        left: 25vw;
+        .spinner {
+            font-size: 50vw;
+        }
+    }
+}
+
+.bodyDiv_text, .restaurants_div {
+    overflow: hidden;
+    transform: translateX(100vw);
+    animation: flyby $spinCycle*3 $spinCycle*2 forwards;
+}
+.bodyDiv_HowItWorks {
+    overflow: hidden;
+    transform: translateX(-100vw);
+    animation: flyby $spinCycle*3 $spinCycle*2 forwards;
+}
+

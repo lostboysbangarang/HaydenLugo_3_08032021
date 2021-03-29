@@ -1,0 +1,8 @@
+@function lighter($color){
+    @if ( lightness($color) < 25% ) {
+      @return lighten($color, 20%);
+  }
+    @else {
+      @return darken($color, 20%);
+  }
+}

@@ -1,0 +1,58 @@
+@import "../utils/mixins";
+@import "../utils/variables.scss";
+
+html,body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+.head {
+    @include centering;
+    @include shadows($primary, .25vh);
+    background-color: #EAEAEA;
+    justify-content: space-between;
+    height: 10vh;
+    z-index: 2;
+    position: relative;
+    &_back {
+        visibility: hidden;
+    }
+    &_logo{
+        @media (max-width: 640px) {
+            display: none;
+        }
+        &_text {
+            display: none;
+            @media (max-width: 640px) {
+                display: inline-block;
+                font-family: 'Shrikhand', cursive;
+                font-size: 2.5em;
+                
+            }
+        }
+    }
+}
+.location {
+    height: 6vh;
+    background-color: lighten($primary, 2%);
+    @include centering;
+    @include shadows($primary, .5vh);
+    z-index: 0;
+    &_layout {
+        @include centering;
+        @include shadows($primary,.25vh);
+        position: relative;
+        background-color: $bckgrnd_Grey;
+        padding: 10px;
+        border-radius: 20px;
+        border-color: darken($bckgrnd_Grey, 10%);
+        border-style: solid;
+        width: fit-content;
+        &_icon {
+            margin-right: 10px;
+        }
+    }
+}

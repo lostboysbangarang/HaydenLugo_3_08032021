@@ -4,7 +4,7 @@
   "description": "Getting started with sass",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./sass/main.scss:./css/style.css"
+    "sass": "sass --watch ./sass/main.scss:./css/index.css sass --watch ./sass/theFullPallet.scss:./css/theFullPallet.css"
   },
   "author": "",
   "license": "ISC"

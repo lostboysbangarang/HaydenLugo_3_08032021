@@ -1,0 +1,47 @@
+.foot {
+    background-color: black;
+    height: 12vh;
+    bottom: 0px;
+    color: white;
+    padding-top: 1vh;
+    @for $i from 1 through 5 {
+        &_#{$i} {
+            @if $i==1 {
+                font-family: 'Shrikhand', cursive;
+                padding-left: 100px;
+            }@else if $i==5 or $i==4 {
+                padding-left: 135px;
+            }@else {
+                padding-left: 95px;
+                display: flex;
+                @if $i==2 {
+                    & i {
+                        margin-right: 27px;
+                    }
+                }
+                @if $i==3 {
+                    & i {
+                        margin-right: 20px;
+                    }
+                }
+            }
+        }
+        
+    }
+    @media (max-width: 640px) {
+        @for $i from 1 through 5 {
+            &_#{$i} {
+                @if $i==1 {
+                    padding-left: 50px;
+                }
+                @else if $i==5 or $i==4 {
+                    padding-left: 88px;
+                }
+                @else {
+                    padding-left: 47.5px;
+                }
+            }
+        }
+    }
+    
+}

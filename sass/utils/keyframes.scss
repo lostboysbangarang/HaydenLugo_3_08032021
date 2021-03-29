@@ -1,0 +1,48 @@
+@-webkit-keyframes imageAnimation {
+    @include keys;
+}
+@-moz-keyframes imageAnimation {
+    @include keys;
+}
+@-o-keyframes imageAnimation {
+    @include keys;
+}
+@-ms-keyframes imageAnimation {
+    @include keys;
+}
+@keyframes imageAnimation {
+    @include keys;
+}
+
+
+@-webkit-keyframes flyby{
+    @include trajectory
+}
+@-moz-keyframes flyby{
+    @include trajectory
+}
+@-o-keyframes flyby{
+    @include trajectory
+}
+@-ms-keyframes flyby{
+    @include trajectory
+}
+@keyframes flyby{
+    @include trajectory
+}
+@keyframes spinCycle{
+    0% {
+        transform: rotate(0deg);
+    }
+    70% {
+        opacity: 1;
+    }
+    98% {
+        transform: rotate(360deg);
+    }
+    100% {
+        opacity: 0;
+        //display: none;
+        //z-index: -100;
+    }
+}

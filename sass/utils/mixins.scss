@@ -1,0 +1,154 @@
+@mixin centering {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+@mixin trans {
+    @for $i from 1 through 4 {
+        &:nth-child(#{$i}) span {
+            @if $i == 1 {
+                visibility: visible;
+                //animation: leftBound 0ms ease-out $spinCycle*3 forwards;
+                //background: linear-gradient(rgba(153, 226, 208, .45));
+                background-image: url(../Resources/images/restaurants/#{$i}.jpg);
+                z-index: -1;
+                width: 100%;
+                height: 74vh;
+                position: absolute;
+                top: 16vh;
+                left: 0vw;
+                color: transparent;
+                background-size: cover;
+                background-position: 50% 50%;
+                background-repeat: none;
+                opacity: 0;
+                padding-bottom: 0px;
+                margin-bottom: 0px;
+                
+                
+                
+                -webkit-backface-visibility: hidden;
+                -webkit-animation: imageAnimation 24s linear infinite 0s;
+                -moz-animation: imageAnimation 24s linear infinite 0s;
+                -o-animation: imageAnimation 24s linear infinite 0s;
+                -ms-animation: imageAnimation 24s linear infinite 0s;
+                animation: imageAnimation 24s linear infinite 0s;
+            }@else {
+                //background: linear-gradient(rgba(153, 226, 208, .45));
+                background-image: url(../Resources/images/restaurants/#{$i}.jpg);
+                z-index: -1;
+                width: 100%;
+                height: 74vh;
+                position: absolute;
+                top: 16vh;
+                left: 0vw;
+                color: transparent;
+                background-size: cover;
+                background-position: 50% 50%;
+                background-repeat: none;
+                opacity: 0;
+                padding-bottom: 0px;
+                margin-bottom: 0px;
+                -webkit-backface-visibility: hidden;
+                -webkit-animation: imageAnimation 24s linear infinite 0s;
+                -moz-animation: imageAnimation 24s linear infinite 0s;
+                -o-animation: imageAnimation 24s linear infinite 0s;
+                -ms-animation: imageAnimation 24s linear infinite 0s;
+                animation: imageAnimation 24s linear infinite 0s;
+                -webkit-animation-delay: #{($i - 1) *6}s;
+                -moz-animation-delay: #{($i - 1) *6}s;
+                -o-animation-delay: #{($i - 1) *6}s;
+                -ms-animation-delay: #{($i - 1) *6}s;
+                animation-delay: #{($i - 1) *6}s;
+                
+            }
+        }
+        &:nth-child(#{$i}) div {
+            visibility: visible;
+            position: absolute;
+            right: 4vh;
+            bottom: 12vh;
+            opacity: 0;
+            -webkit-backface-visibility: hidden;
+            -webkit-animation: imageAnimation 24s linear infinite 0s;
+            -moz-animation: imageAnimation 24s linear infinite 0s;
+            -o-animation: imageAnimation 24s linear infinite 0s;
+            -ms-animation: imageAnimation 24s linear infinite 0s;
+            animation: imageAnimation 24s linear infinite 0s; 
+            -webkit-animation-delay: #{($i - 1) *6}s;
+            -moz-animation-delay: #{($i - 1) *6}s;
+            -o-animation-delay: #{($i - 1) *6}s;
+            -ms-animation-delay: #{($i - 1) *6}s;
+            animation-delay: #{($i - 1) *6}s;
+        }
+    }
+}
+
+@mixin theWorks {
+    @for $i from 1 through 3 {
+        &_#{$i} {
+            @include centering;
+            @include shadows(darken($bckgrnd_Grey, 20%), .5vh);
+            justify-content: flex-start;
+            display: flex;
+            background-color: $bckgrnd_Grey;
+            width: 40vw;
+            height: 5vh;
+            margin-bottom: 2.5vh;
+            border-radius: 5vh;
+            @media (max-width: 640px) {
+                width: 80vw;
+            }
+            
+            @for $j from 1 through 2 {
+                &_#{$j}{
+                    margin-right: 1vw;
+                    @include centering;
+                    
+                    @if $j == 1 {
+                        background-color: $primary;
+                        color: $white;
+                        font-size: .75em;
+                        height: 2vh;
+                        width: 2vh;
+                        border-radius: 5vh;
+                        margin-left: -.5vw;
+                        
+                    }
+                }
+            }           
+        }
+        
+
+    }
+}
+@mixin keys{
+    0% {opacity: 0; -webkit-animation-timing-function: ease-in;}
+    12.5% {opacity: 1; -webkit-animation-timing-function: ease-out;}
+    25% {opacity: 1}
+    37.5% {opacity: 0}
+    100% {opacity: 0}
+}
+@mixin trajectory{
+    0% {
+        visibility: hidden;
+    }
+    100% {
+        transform: translateX(0vw);
+        overflow: visible;
+    }
+}
+@mixin shadows($color: lighter($color), $size: $size) {
+    box-shadow: 0px $size $size lighter($color);
+}
+@mixin maps {
+    @for $i from 1 through 4 {
+        &_#{$i} {
+            background-image: url(../Resources/images/restaurants/#{$i}#{$i}.jpg);
+            background-size: cover;
+            background-position: 50% 50%;
+            border-radius: 5vh 5vh 0vh 0vh;
+            height: 27vh;
+        }
+    }
+}
